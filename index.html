@@ -7,13 +7,6 @@
 	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
 				
-		<script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-				      <script>
-				    $.getJSON("https://api.ipify.org?format=json", function(data) {
-					$("#clientip").html(data.ip);
-				    })
-				    </script>
 	</head>
 	<body>
 		<div class="container">
@@ -26,7 +19,15 @@
 				<br><br>
 				<h2>Tools</h2>
 				
-				Your IP Address is: <p id="clientip"></p>
+				Your IP Address is:
+				<script type="application/javascript">
+  					function getIP(json) {
+    				document.write(json.ip);
+  					}
+				</script>
+
+				<script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+				
 				<br>
 				lan.6ixnet.com IP Address is: ??
 				<br>
